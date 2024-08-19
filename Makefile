@@ -20,7 +20,7 @@ install:
 	cd app && ./gradlew clean install
 
 run-dist:
-	cd app && ./build/install/app/bin/app.bat
+	cd app && ./build/install/app/bin/app
 
 
 check-updates:
