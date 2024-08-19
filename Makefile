@@ -1,5 +1,5 @@
 checkstyle:
-	gradlew.bat checkstyleMain
+	app\gradlew.bat checkstyleMain
 clean:
 	cd app && ./gradlew clean
 
