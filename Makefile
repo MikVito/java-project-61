@@ -1,4 +1,4 @@
-checkstyleMain:
+checkstyle:
 	gradlew.bat checkstyleMain
 clean:
 	cd app && ./gradlew clean
