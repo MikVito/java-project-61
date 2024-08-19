@@ -1,5 +1,5 @@
 plugins {
-
+    id("java")
     application
     checkstyle
 }
@@ -29,5 +29,12 @@ tasks.getByName("run", JavaExec::class) {
 
 checkstyle {
     toolVersion = "10.12.4"
+
+}
+tasks.withType<Checkstyle>().configureEach {
+    reports {
+        xml.required.set(true)
+        html.required.set(true)
+    }
 }
 
