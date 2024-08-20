@@ -8,14 +8,24 @@ public class GameChoose {
         System.out.println("Please enter the game number and press Enter.\n");
         System.out.println("1 - Greet\n2 - Even\n0 - Exit");
         int gameNumber = scanner.nextInt();
+        System.out.println("Your choice: " + gameNumber);
 
-        if (gameNumber == 1) {
-            Cli.cli();
-        } else if (gameNumber == 2) {
-            ParityCheck.parityCheck();
-        }
-        if (gameNumber == 0) {
-            System.exit(0);
+        switch (gameNumber) {
+            case 1:
+                Cli.cli();
+                break;
+
+            case 2:
+                ParityCheck.parityCheck();
+                break;
+
+            case 0:
+                System.exit(0);
+                break;
+
+            default:
+                System.out.println("Invalid insert, please select 0, 1 or 2");
+                break;
         }
     }
 }

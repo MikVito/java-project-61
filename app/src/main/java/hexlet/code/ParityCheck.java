@@ -12,6 +12,7 @@ public class ParityCheck {
         System.out.println("Question: " + randomNum);
         String gameAnswer = scanner.nextLine();
         System.out.println("Your answer: " + gameAnswer);
+
         if (gameAnswer.equals(parity)) {
             System.out.println("Correct!");
         } else {
