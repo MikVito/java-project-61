@@ -21,6 +21,7 @@ public class App {
                 break;
 
             case 0:
+                System.out.println("See you soon");
                 System.exit(0);
                 break;
 
