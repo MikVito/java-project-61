@@ -8,6 +8,12 @@ public class ParityCheck {
         String parity = randomNum % 2 == 0 ? "yes" : "no";
 
         Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Welcome to the Brain Games!");
+        System.out.print("May I have your name?\n");
+        String userName = scanner.nextLine();
+        System.out.println("Hello, " + userName + "!");
+
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         System.out.println("Question: " + randomNum);
         String gameAnswer = scanner.nextLine();
