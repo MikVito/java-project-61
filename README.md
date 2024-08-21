@@ -3,3 +3,6 @@
 
 ### Test Coverage Badge
 <a href="https://codeclimate.com/github/MikVito/java-project-61/test_coverage"><img src="https://api.codeclimate.com/v1/badges/c62c8e74e7fd9c1a6778/test_coverage" /></a>
+
+### Project description video 
+https://drive.google.com/file/d/1mf89fe01COxEEXdbdPr90_cVAmghwRix/view?usp=drive_link
