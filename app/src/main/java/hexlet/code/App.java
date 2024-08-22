@@ -1,9 +1,7 @@
 package hexlet.code;
-
 import hexlet.code.games.Calculator;
 import hexlet.code.games.ParityCheck;
 import hexlet.code.games.GreatestDivisor;
-
 import java.util.Scanner;
 
 public class App {
@@ -44,7 +42,7 @@ public class App {
                 break;
 
             default:
-                System.out.println("Invalid insert, please select game number 0, 1, 2, or 3");
+                System.out.println("Invalid insert, please select game number from 0 to 4");
                 break;
         }
     }
