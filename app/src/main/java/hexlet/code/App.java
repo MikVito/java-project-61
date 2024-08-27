@@ -1,7 +1,6 @@
 package hexlet.code;
-import hexlet.code.games.Calculator;
-import hexlet.code.games.ParityCheck;
-import hexlet.code.games.GreatestDivisor;
+import hexlet.code.games.*;
+
 import java.util.Scanner;
 
 public class App {
@@ -14,6 +13,8 @@ public class App {
         System.out.println("2 - Even");
         System.out.println("3 - Calc");
         System.out.println("4 - GCD");
+        System.out.println("5 - Progression");
+        System.out.println("6 - Prime");
 
         int gameNumber = scanner.nextInt();
         System.out.println("Your choice: " + gameNumber);
@@ -36,13 +37,21 @@ public class App {
                 GreatestDivisor.divisor();
                 break;
 
+            case 5:
+                Progression.progression();
+                break;
+
+            case 6:
+                Prime.primeOf();
+                break;
+
             case 0:
                 System.out.println("See you soon");
                 System.exit(0);
                 break;
 
             default:
-                System.out.println("Invalid insert, please select game number from 0 to 4");
+                System.out.println("Invalid insert, please select game number from 0 to 6");
                 break;
         }
     }
