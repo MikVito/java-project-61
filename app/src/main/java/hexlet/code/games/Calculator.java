@@ -1,14 +1,13 @@
 package hexlet.code.games;
+
+import hexlet.code.Engine;
+
 import java.util.Random;
 import java.util.Scanner;
 
 public class Calculator {
     public static void calc() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Welcome to the Brain Games!");
-        System.out.print("What is your name?\n");
-        String userName = scanner.nextLine();
-        System.out.println("Hello, " + userName + "!");
+        String userName = Engine.gameEngine();
         System.out.println("What is the result of the expression?");
 
         int correctAnswers = 0;
@@ -16,17 +15,17 @@ public class Calculator {
         Random randomNum = new Random();
         int randomV1 = randomNum.nextInt(20);
         int randomV2 = randomNum.nextInt(10);
-        int randomV3 = randomNum.nextInt(15);
 
         int mult = randomV2 * randomV1;
-        int sum = randomV1 + randomV3;
-        int diff = randomV3 - randomV1;
+        int sum = randomV1 + randomV2;
+        int diff = randomV2 - randomV1;
 
         int[] result = {mult, sum, diff};
         String[] operator = {"*", "+", "-"};
 
         for (int i = 0; i < 3; i++) {
 
+            Scanner scanner = new Scanner(System.in);
             System.out.println("Question: " + randomV1 + " " + operator[i] + " " + randomV2);
             int gameAnswer = scanner.nextInt();
             System.out.println("Your answer: " + gameAnswer);
