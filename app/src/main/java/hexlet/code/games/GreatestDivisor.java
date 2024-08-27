@@ -1,9 +1,12 @@
 package hexlet.code.games;
 
+import hexlet.code.Engine;
+
 import java.util.Random;
 import java.util.Scanner;
 
 public class GreatestDivisor {
+
     public static int dsg(int a, int b) {
         while (b != 0) {
             int temp = b;
@@ -14,11 +17,7 @@ public class GreatestDivisor {
     }
 
     public static void divisor() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Welcome to the Brain Games!");
-        System.out.print("What is your name?\n");
-        String userName = scanner.nextLine();
-        System.out.println("Hello, " + userName + "!");
+        String userName = Engine.gameEngine();
         System.out.println("Find the greatest common divisor of given numbers.");
 
         int correctAnswers = 0;
@@ -27,13 +26,15 @@ public class GreatestDivisor {
         int randomV1 = random.nextInt(100);
         int randomV2 = random.nextInt(55);
 
-        System.out.println("Question: " + randomV1 + " " + randomV2);
-        int userAnswer = scanner.nextInt();
-        System.out.println("Your answer: " + userAnswer);
-
         for (int i = 0; i < 3; i++) {
 
-            if (userAnswer == dsg(randomV1, randomV2)) {
+            Scanner scanner = new Scanner(System.in);
+
+            System.out.println("Question: ");
+            int userAnswer = scanner.nextInt();
+            System.out.println("Your answer: " + userAnswer);
+
+            if (userAnswer == correctAnswers) {
                 System.out.println("Correct!");
                 correctAnswers++;
             } else {
@@ -47,3 +48,4 @@ public class GreatestDivisor {
         }
     }
 }
+
