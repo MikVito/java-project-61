@@ -10,7 +10,7 @@ build
 bin
 .project*
 .classpath
-.idea/
+.idea
 .factorypath
 # Compiled class file
 *.class

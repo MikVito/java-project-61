@@ -22,19 +22,20 @@ public class GreatestDivisor {
 
         int correctAnswers = 0;
 
-        Random random = new Random();
-        int randomV1 = random.nextInt(100);
-        int randomV2 = random.nextInt(55);
-
         for (int i = 0; i < 3; i++) {
+
+            Random random = new Random();
+            int randomV1 = random.nextInt(100);
+            int randomV2 = random.nextInt(55);
 
             Scanner scanner = new Scanner(System.in);
 
-            System.out.println("Question: ");
+            System.out.println("Question: " + randomV1 + " " + randomV2);
+            int isAnswer = dsg(randomV1, randomV2);
             int userAnswer = scanner.nextInt();
             System.out.println("Your answer: " + userAnswer);
 
-            if (userAnswer == correctAnswers) {
+            if (userAnswer == isAnswer) {
                 System.out.println("Correct!");
                 correctAnswers++;
             } else {

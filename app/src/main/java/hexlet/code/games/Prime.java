@@ -29,7 +29,7 @@ public class Prime {
         int correctAnswers = 0;
 
         for (int i = 0; i < 3; i++) {
-            int number = random.nextInt(0, 10);
+            int number = random.nextInt(10) + 2;
             boolean isPrime = Prime.primeNum(number);
             String correctAnswer = isPrime ? "yes" : "no";
 
@@ -42,10 +42,11 @@ public class Prime {
                 correctAnswers++;
             } else {
                 System.out.println("'" + userAnswer + "' is wrong answer ;(");
+                break;
             }
-            if (correctAnswers == 3) {
-                System.out.println("Congratulations " + userName + "!");
-            }
+        }
+        if (correctAnswers == 3) {
+            System.out.println("Congratulations " + userName + "!");
         }
     }
 }
