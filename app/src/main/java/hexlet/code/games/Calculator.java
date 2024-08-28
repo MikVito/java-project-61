@@ -13,12 +13,12 @@ public class Calculator {
         int correctAnswers = 0;
 
         Random randomNum = new Random();
-        int randomV1 = randomNum.nextInt(20);
-        int randomV2 = randomNum.nextInt(10);
+        int randomV1 = randomNum.nextInt(1, 15) + 1;
+        int randomV2 = randomNum.nextInt(1, 10) + 2;
 
         int mult = randomV2 * randomV1;
         int sum = randomV1 + randomV2;
-        int diff = randomV2 - randomV1;
+        int diff = randomV1 - randomV2;
 
         int[] result = {mult, sum, diff};
         String[] operator = {"*", "+", "-"};
