@@ -22,8 +22,11 @@ install:
 	cd app && ./gradlew clean install
 
 run-dist:
+ifeq ($(OS),Windows_NT)
+	cd app && build\install\app\bin\app.bat
+else
 	cd app && ./build/install/app/bin/app
-
+endif
 
 check-updates:
 	cd app && ./gradlew dependencyUpdates
