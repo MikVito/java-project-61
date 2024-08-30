@@ -1,7 +1,12 @@
 checkstyleMain:
 	cd app && ./gradlew checkstyleMain
+
 clean:
+ifeq ($(OS),Windows_NT)
+	cd app && gradlew.bat clean
+else
 	cd app && ./gradlew clean
+endif
 
 build:
 	cd app && ./gradlew clean build
