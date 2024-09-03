@@ -3,6 +3,7 @@ checkstyleMain:
 
 clean:
 	cd app && ./gradlew clean
+
 build:
 	cd app && ./gradlew clean build
 
