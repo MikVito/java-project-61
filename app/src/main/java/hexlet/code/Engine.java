@@ -23,7 +23,7 @@ public class Engine {
             } else {
                 System.out.println("'" + userAnswer + "'"
                         + " is wrong answer ;(. Correct answer was" + "'" + round[count][CORRECT_ANSWER] + "'");
-                System.out.println("Let's try again " + userName + "!");
+                System.out.println("Let's try again, " + userName + "!");
                 System.exit(0);
             }
         }
