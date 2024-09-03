@@ -1,11 +1,25 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-
 import java.util.Random;
-import java.util.Scanner;
 
 public class Prime {
+    public static final String STRING = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+    public static int countOfRounds = 3;
+    public static int question = 0;
+    public static int correctAnswers = 1;
+
+    public static void primeOf() {
+        Random random = new Random();
+        String[][] round = new String[countOfRounds][2];
+        for (int i = 0; i < round.length; i++) {
+            int randomNum = random.nextInt(0, 100) + 1;
+            round[i][question] = Integer.toString(randomNum);
+            round[i][correctAnswers] = primeNum(randomNum) ? "yes" : "no";
+        }
+        Engine.gameEngine(STRING, round);
+    }
+
     public static boolean primeNum(int prime) {
         if (prime <= 1) {
             return false;
@@ -16,37 +30,5 @@ public class Prime {
             }
         }
         return true;
-    }
-
-    public static void primeOf() {
-        Scanner scanner = new Scanner(System.in);
-        Random random = new Random();
-
-        String userName = Engine.gameEngine();
-
-        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
-
-        int correctAnswers = 0;
-
-        for (int i = 0; i < 3; i++) {
-            int number = random.nextInt(10) + 2;
-            boolean isPrime = Prime.primeNum(number);
-            String correctAnswer = isPrime ? "yes" : "no";
-
-            System.out.println("Question: " + number);
-            String userAnswer = scanner.nextLine();
-            System.out.println("Your answer: " + userAnswer);
-
-            if (correctAnswer.equals(userAnswer)) {
-                System.out.println("Correct!");
-                correctAnswers++;
-            } else {
-                System.out.println("'" + userAnswer + "' is wrong answer ;(");
-                break;
-            }
-        }
-        if (correctAnswers == 3) {
-            System.out.println("Congratulations " + userName + "!");
-        }
     }
 }
