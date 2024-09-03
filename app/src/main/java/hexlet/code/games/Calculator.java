@@ -28,7 +28,7 @@ public class Calculator {
             String diff2 = "-";
             String[] stringOperator = {mult2, sum2, diff2};
 
-            round[i][QUESTION] = randomNum1 + " " + operator[i] + " " + randomNum2;
+            round[i][QUESTION] = randomNum1 + " " + stringOperator[i] + " " + randomNum2;
             round[i][CORRECT_ANSWER] = randomNum1 + " " + stringOperator[i] + " " + randomNum2;
         }
         Engine.gameEngine(STRING, round);
