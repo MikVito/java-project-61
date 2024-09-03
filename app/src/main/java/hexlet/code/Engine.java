@@ -27,7 +27,7 @@ public class Engine {
                 System.exit(0);
             }
         }
-        if (count == 3) {
+        if (count == COUNT_OF_ROUNDS) {
             System.out.println("Congratulations, " + userName + "!\nYou are Winner!!!");
         }
     }

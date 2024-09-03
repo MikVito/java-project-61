@@ -14,42 +14,18 @@ public class App {
         System.out.println("Please enter the game number and press Enter.\n");
 
         System.out.println("0 - Exit\n1 - Greet\n2 - Even\n3 - Calc\n4 - GCD\n5 - Progression\n6 - Prime");
-        int gameNumber = scanner.nextInt();
+        String gameNumber = scanner.nextLine();
         System.out.println("Your choice: " + gameNumber);
 
         switch (gameNumber) {
-            case 1:
-                Cli.greetings();
-                break;
-
-            case 2:
-                Even.parityCheck();
-                break;
-
-            case 3:
-                Calculator.calc();
-                break;
-
-            case 4:
-                GCD.divisor();
-                break;
-
-            case 5:
-                Progression.progression();
-                break;
-
-            case 6:
-                Prime.primeOf();
-                break;
-
-            case 0:
-                System.out.println("See you soon");
-                System.exit(0);
-                break;
-
-            default:
-                System.out.println("Invalid insert, please select game number from 0 to 6");
-                break;
+            case "1" -> Cli.greetings();
+            case "2" -> Even.parityCheck();
+            case "3" -> Calculator.calc();
+            case "4" -> GCD.divisor();
+            case "5" -> Progression.progression();
+            case "6" -> Prime.primeOf();
+            case "0" -> System.out.println("See you soon");
+            default -> System.out.println("Invalid insert, please select game number from 0 to 6");
         }
     }
 }
