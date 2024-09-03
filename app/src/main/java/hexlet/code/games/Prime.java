@@ -5,17 +5,17 @@ import java.util.Random;
 
 public class Prime {
     public static final String STRING = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-    public static int countOfRounds = 3;
-    public static int question = 0;
-    public static int correctAnswers = 1;
-    public static int BOUND_OF_RANDOM_V1 = 1;
-    public static int BOUND_OF_RANDOM_V2 = 100;
+    public static final int countOfRounds = 3;
+    public static final int question = 0;
+    public static final int correctAnswers = 1;
+    public static final int boundOfRandomV1 = 1;
+    public static final int boundOfRandomV2 = 100;
 
     public static void primeOf() {
         Random random = new Random();
         String[][] round = new String[countOfRounds][2];
         for (int i = 0; i < round.length; i++) {
-            int randomNum = random.nextInt(BOUND_OF_RANDOM_V1, BOUND_OF_RANDOM_V2) + 1;
+            int randomNum = random.nextInt(boundOfRandomV1, boundOfRandomV2) + 1;
             round[i][question] = Integer.toString(randomNum);
             round[i][correctAnswers] = primeNum(randomNum) ? "yes" : "no";
         }
