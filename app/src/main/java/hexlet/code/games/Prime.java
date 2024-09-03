@@ -21,9 +21,6 @@ public class Prime {
     }
 
     public static boolean primeNum(int prime) {
-        if (prime <= 1) {
-            return false;
-        }
         for (int i = 2; i < Math.sqrt(prime); i++) {
             if (prime % i == 0) {
                 return false;
