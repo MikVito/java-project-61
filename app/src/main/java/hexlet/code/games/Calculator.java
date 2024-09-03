@@ -9,17 +9,17 @@ public class Calculator {
     public static final int COUNT_OF_ROUNDS = 3;
     public static final int QUESTION = 0;
     public static final int CORRECT_ANSWER = 1;
-    public static final int startOfRandom = 1;
-    public static final int boundOfRandomV1 = 100;
-    public static final int boundOfRandomV2 = 50;
+    public static final int START = 1;
+    public static final int BOUND_OF_RANDOM_V_1 = 100;
+    public static final int BOUND_OF_RANDOM_V_2 = 50;
 
 
     public static void calc() {
         Random random = new Random();
         String[][] round = new String[COUNT_OF_ROUNDS][2];
         for (int i = 0; i < round.length; i++) {
-            int randomNum1 = random.nextInt(startOfRandom, boundOfRandomV1) + 1;
-            int randomNum2 = random.nextInt(startOfRandom, boundOfRandomV2) + 1;
+            int randomNum1 = random.nextInt(START, BOUND_OF_RANDOM_V_1) + 1;
+            int randomNum2 = random.nextInt(START, BOUND_OF_RANDOM_V_2) + 1;
 
             int mult = randomNum1 * randomNum2;
             int sum = randomNum1 + randomNum2;
