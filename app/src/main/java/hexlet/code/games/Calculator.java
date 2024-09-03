@@ -1,47 +1,37 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-
 import java.util.Random;
-import java.util.Scanner;
+
 
 public class Calculator {
+    public static final String STRING = "What is the result of the expression?";
+    public static final int COUNT_OF_ROUNDS = 3;
+    public static final int QUESTION = 0;
+    public static final int CORRECT_ANSWER = 1;
+
+
     public static void calc() {
-        String userName = Engine.gameEngine();
-        System.out.println("What is the result of the expression?");
+        Random random = new Random();
+        String[][] round = new String[COUNT_OF_ROUNDS][2];
+        for (int i = 0; i < round.length; i++) {
+            int randomNum1 = random.nextInt(0, 100) + 1;
+            int randomNum2 = random.nextInt(0, 100) + 1;
 
-        int correctAnswers = 0;
+            int mult = randomNum1 * randomNum2;
+            int sum = randomNum1 + randomNum1;
+            int diff = randomNum1 - randomNum2;
+            int[] operator = {mult, sum, diff};
 
-        Random randomNum = new Random();
-        int randomV1 = randomNum.nextInt(1, 15) + 1;
-        int randomV2 = randomNum.nextInt(1, 10) + 2;
+            String mult2 = "*";
+            String sum2 = "+";
+            String diff2 = "-";
+            String[] stringOperator = {mult2, sum2, diff2};
 
-        int mult = randomV2 * randomV1;
-        int sum = randomV1 + randomV2;
-        int diff = randomV1 - randomV2;
-
-        int[] result = {mult, sum, diff};
-        String[] operator = {"*", "+", "-"};
-
-        for (int i = 0; i < 3; i++) {
-
-            Scanner scanner = new Scanner(System.in);
-            System.out.println("Question: " + randomV1 + " " + operator[i] + " " + randomV2);
-            int gameAnswer = scanner.nextInt();
-            System.out.println("Your answer: " + gameAnswer);
-
-            if (gameAnswer == result[i]) {
-                System.out.println("Correct!");
-                correctAnswers++;
-
-            } else {
-                System.out.println(gameAnswer + " is wrong answer ;(\nCorrect answer was " + result[i]);
-                System.out.println("Let's try again!");
-                return;
-            }
+            round[i][QUESTION] = randomNum1 + " " + operator[i] + " " + randomNum2;
+            round[i][CORRECT_ANSWER] = randomNum1 + " " + stringOperator[i] + " " + randomNum2;
         }
-        if (correctAnswers == 3) {
-            System.out.println("Congratulations. " + userName + "!");
-        }
+        Engine.gameEngine(STRING, round);
     }
 }
+
