@@ -5,6 +5,7 @@ import hexlet.code.games.Calculator;
 import hexlet.code.games.GCD;
 import hexlet.code.games.Even;
 import hexlet.code.games.Progression;
+
 import java.util.Scanner;
 
 public class App {

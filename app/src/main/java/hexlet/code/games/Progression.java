@@ -14,16 +14,21 @@ public class Progression {
 
     public static void progression() {
         String[][] round = new String[COUNTS_OF_ROUND][2];
-        Random random = new Random();
+
         for (int i = 0; i < round.length; i++) {
-            int start = random.nextInt(1, 20) + 1;
+            Random random = new Random();
+            int start = random.nextInt(10) + 1;
 
             int[] progression = progressionRandom(ARRAY_LENGTH, start, ARRAY_STEP);
-            String[] progressionToString = new String[]{Integer.toString(progression[i])};
-            var missedNum = random.nextInt(1, progressionToString.length);
-            round[i][QUESTION] = progressionToString[missedNum];
+            String[] progressionToString = new String[progression.length];
+            for (int j = 0; j < progression.length; j++) {
+                progressionToString[j] = Integer.toString(progression[j]);
+            }
+            int missedNum = random.nextInt(1, progressionToString.length);
+            String correctAnswer = progressionToString[missedNum];
             progressionToString[missedNum] = "..";
-            round[i][CORRECT_ANSWERS] = String.join(" ", progressionToString);
+            round[i][QUESTION] = String.join(" ", progressionToString);
+            round[i][CORRECT_ANSWERS] = correctAnswer;
         }
         Engine.gameEngine(STRING, round);
     }
