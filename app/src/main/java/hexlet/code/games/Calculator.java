@@ -16,10 +16,10 @@ public class Calculator {
         String[][] round = new String[COUNT_OF_ROUNDS][2];
         for (int i = 0; i < round.length; i++) {
             int randomNum1 = random.nextInt(0, 100) + 1;
-            int randomNum2 = random.nextInt(0, 100) + 1;
+            int randomNum2 = random.nextInt(0, 50) + 1;
 
             int mult = randomNum1 * randomNum2;
-            int sum = randomNum1 + randomNum1;
+            int sum = randomNum1 + randomNum2;
             int diff = randomNum1 - randomNum2;
             int[] operator = {mult, sum, diff};
 
@@ -29,7 +29,7 @@ public class Calculator {
             String[] stringOperator = {mult2, sum2, diff2};
 
             round[i][QUESTION] = randomNum1 + " " + stringOperator[i] + " " + randomNum2;
-            round[i][CORRECT_ANSWER] = randomNum1 + " " + stringOperator[i] + " " + randomNum2;
+            round[i][CORRECT_ANSWER] = String.valueOf(operator[i]);
         }
         Engine.gameEngine(STRING, round);
     }
