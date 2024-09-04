@@ -36,7 +36,6 @@
 #### GSD ####
 ![img_3.png](img_3.png)
 #### Progression ###
-Soon comes a picture
-
+![img_5.png](img_5.png)
 #### Prime ###
 ![img_4.png](img_4.png)
