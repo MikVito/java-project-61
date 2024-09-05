@@ -1,7 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-import java.util.Random;
+import hexlet.code.Generator;
 
 public class Even {
     public static final String STRING = "Answer 'yes' if the number is even, otherwise answer 'no'.";
@@ -14,8 +14,7 @@ public class Even {
     public static void parityCheck() {
         String[][] round = new String[COUNT_OF_ROUNDS][2];
         for (int i = 0; i < round.length; i++) {
-            Random random = new Random();
-            var randomNum = random.nextInt(BOUND_OF_RANDOM_V_1, BOUND_OF_RANDOM_V_2) + 1;
+            var randomNum = Generator.getRandomInt(BOUND_OF_RANDOM_V_1, BOUND_OF_RANDOM_V_2) + 1;
             round[i][QUESTION] = Integer.toString(randomNum);
             round[i][CORRECT_ANSWER] = logicOfEven(randomNum) ? "yes" : "no";
         }

@@ -1,7 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-import java.util.Random;
+import hexlet.code.Generator;
 
 
 public class Calculator {
@@ -15,11 +15,10 @@ public class Calculator {
 
 
     public static void calc() {
-        Random random = new Random();
         String[][] round = new String[COUNT_OF_ROUNDS][2];
         for (int i = 0; i < round.length; i++) {
-            int randomNum1 = random.nextInt(START, BOUND_OF_RANDOM_V_1) + 1;
-            int randomNum2 = random.nextInt(START, BOUND_OF_RANDOM_V_2) + 1;
+            int randomNum1 = Generator.getRandomInt(START, BOUND_OF_RANDOM_V_1) + 1;
+            int randomNum2 = Generator.getRandomInt(START, BOUND_OF_RANDOM_V_2) + 1;
 
             int mult = randomNum1 * randomNum2;
             int sum = randomNum1 + randomNum2;
