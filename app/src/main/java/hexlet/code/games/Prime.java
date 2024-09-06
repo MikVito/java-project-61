@@ -6,8 +6,6 @@ import hexlet.code.Generator;
 
 public class Prime {
     public static final String TEXT = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-    public static final int QUESTION = 0;
-    public static final int CORRECT_ANSWERS = 1;
     public static final int BOUND_OF_RANDOM_V_1 = 2;
     public static final int BOUND_OF_RANDOM_V_2 = 101;
 
@@ -16,8 +14,8 @@ public class Prime {
         String[][] round = new String[roundCount][2];
         for (int i = 0; i < round.length; i++) {
             int randomNum = Generator.getRandomInt(BOUND_OF_RANDOM_V_1, BOUND_OF_RANDOM_V_2);
-            round[i][QUESTION] = Integer.toString(randomNum);
-            round[i][CORRECT_ANSWERS] = primeNum(randomNum) ? "yes" : "no";
+            round[i][Engine.QUESTION] = Integer.toString(randomNum);
+            round[i][Engine.CORRECT_ANSWER] = primeNum(randomNum) ? "yes" : "no";
         }
         Engine.gameEngine(TEXT, round);
     }

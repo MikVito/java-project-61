@@ -10,7 +10,6 @@ public class Calculator {
     public static final int BOUND_OF_RANDOM_V_1 = 100;
     public static final int BOUND_OF_RANDOM_V_2 = 50;
 
-
     public static void calc() {
         int roundCount = Engine.COUNT_OF_ROUNDS;
         String[][] round = new String[roundCount][2];
