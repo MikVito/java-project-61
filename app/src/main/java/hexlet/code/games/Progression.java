@@ -11,7 +11,7 @@ public class Progression {
     public static final int BOUND_OF_RANDOM_MIN = 1;
     public static final int BOUND_OF_RANDOM_MAX = 10;
 
-    public static void progression() {
+    public static void generateProgressionRound() {
         int roundCount = Engine.COUNT_OF_ROUNDS;
         String[][] round = new String[roundCount][2];
 

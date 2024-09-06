@@ -9,7 +9,7 @@ public class GCD {
     public static final int BOUND_OF_RANDOM_V_1 = 2;
     public static final int BOUND_OF_RANDOM_V_2 = 100;
 
-    public static void divisor() {
+    public static void calculateDivisor() {
         int roundCount = Engine.COUNT_OF_ROUNDS;
         String[][] round = new String[roundCount][2];
         for (int i = 0; i < round.length; i++) {

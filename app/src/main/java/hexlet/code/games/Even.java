@@ -18,6 +18,7 @@ public class Even {
         }
         Engine.gameEngine(TEXT, round);
     }
+
     public static boolean logicOfEven(int evenNum) {
         return evenNum % 2 == 0;
     }

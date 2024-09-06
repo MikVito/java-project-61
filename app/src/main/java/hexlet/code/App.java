@@ -21,9 +21,9 @@ public class App {
             case "1" -> Cli.greetings();
             case "2" -> Even.parityCheck();
             case "3" -> Calculator.calc();
-            case "4" -> GCD.divisor();
-            case "5" -> Progression.progression();
-            case "6" -> Prime.primeOf();
+            case "4" -> GCD.calculateDivisor();
+            case "5" -> Progression.generateProgressionRound();
+            case "6" -> Prime.numPrime();
             case "0" -> System.out.println("See you soon");
             default -> System.out.println("Invalid insert, please select game number from 0 to 6");
         }
