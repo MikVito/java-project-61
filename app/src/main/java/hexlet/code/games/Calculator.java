@@ -20,20 +20,28 @@ public class Calculator {
             int randomNum1 = Generator.getRandomInt(START, BOUND_OF_RANDOM_V_1) + 1;
             int randomNum2 = Generator.getRandomInt(START, BOUND_OF_RANDOM_V_2) + 1;
 
-            int mult = randomNum1 * randomNum2;
-            int sum = randomNum1 + randomNum2;
-            int diff = randomNum1 - randomNum2;
-            int[] operator = {mult, sum, diff};
-
-            String mult2 = "*";
-            String sum2 = "+";
-            String diff2 = "-";
-            String[] stringOperator = {mult2, sum2, diff2};
+            String[] stringOperator = {"*", "+", "-"};
+            String operator = stringOperator[i % stringOperator.length];
 
             round[i][QUESTION] = randomNum1 + " " + stringOperator[i] + " " + randomNum2;
-            round[i][CORRECT_ANSWER] = String.valueOf(operator[i]);
+            round[i][CORRECT_ANSWER] = String.valueOf(calculationOf(randomNum1, randomNum2, operator));
         }
         Engine.gameEngine(TEXT, round);
     }
+
+    public static int calculationOf(int num1, int num2, String operator) {
+        switch (operator) {
+            case "*":
+                return num1 * num2;
+            case "+":
+                return num1 + num2;
+            case "-":
+                return num1 - num2;
+            default:
+                throw new IllegalArgumentException("Invalid operator");
+        }
+    }
 }
+
+
 
