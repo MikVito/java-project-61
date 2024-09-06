@@ -3,7 +3,6 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 import hexlet.code.Generator;
 
-import java.util.Random;
 
 public class Progression {
     public static final String TEXT = "What number is missing in the progression?";
@@ -19,7 +18,6 @@ public class Progression {
         String[][] round = new String[roundCount][2];
 
         for (int i = 0; i < round.length; i++) {
-            Random random = new Random();
             int start = Generator.getRandomInt(BOUND_OF_RANDOM_MIN, BOUND_OF_RANDOM_MAX) + 1;
 
             int[] progression = progressionRandom(ARRAY_LENGTH, start, ARRAY_STEP);
@@ -27,7 +25,7 @@ public class Progression {
             for (int j = 0; j < progression.length; j++) {
                 progressionToString[j] = Integer.toString(progression[j]);
             }
-            int missedNum = random.nextInt(1, progressionToString.length);
+            int missedNum = Generator.getRandomInt(BOUND_OF_RANDOM_MIN, progressionToString.length);
             String correctAnswer = progressionToString[missedNum];
             progressionToString[missedNum] = "..";
             round[i][QUESTION] = String.join(" ", progressionToString);
