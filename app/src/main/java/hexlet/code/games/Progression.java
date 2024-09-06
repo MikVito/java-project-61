@@ -6,14 +6,12 @@ import hexlet.code.Generator;
 
 public class Progression {
     public static final String TEXT = "What number is missing in the progression?";
-    public static final int QUESTION = 0;
-    public static final int CORRECT_ANSWERS = 1;
     public static final int ARRAY_LENGTH = 10;
     public static final int ARRAY_STEP = 3;
     public static final int BOUND_OF_RANDOM_MIN = 1;
     public static final int BOUND_OF_RANDOM_MAX = 10;
 
-    public static void progression() {
+    public static void generateProgressionRound() {
         int roundCount = Engine.COUNT_OF_ROUNDS;
         String[][] round = new String[roundCount][2];
 
@@ -28,8 +26,8 @@ public class Progression {
             int missedNum = Generator.getRandomInt(BOUND_OF_RANDOM_MIN, progressionToString.length);
             String correctAnswer = progressionToString[missedNum];
             progressionToString[missedNum] = "..";
-            round[i][QUESTION] = String.join(" ", progressionToString);
-            round[i][CORRECT_ANSWERS] = correctAnswer;
+            round[i][Engine.QUESTION] = String.join(" ", progressionToString);
+            round[i][Engine.CORRECT_ANSWER] = correctAnswer;
         }
         Engine.gameEngine(TEXT, round);
     }

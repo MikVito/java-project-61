@@ -6,12 +6,9 @@ import hexlet.code.Generator;
 
 public class Calculator {
     public static final String TEXT = "What is the result of the expression?";
-    public static final int QUESTION = 0;
-    public static final int CORRECT_ANSWER = 1;
     public static final int START = 1;
     public static final int BOUND_OF_RANDOM_V_1 = 100;
     public static final int BOUND_OF_RANDOM_V_2 = 50;
-
 
     public static void calc() {
         int roundCount = Engine.COUNT_OF_ROUNDS;
@@ -23,8 +20,8 @@ public class Calculator {
             String[] stringOperator = {"*", "+", "-"};
             String operator = stringOperator[i % stringOperator.length];
 
-            round[i][QUESTION] = randomNum1 + " " + stringOperator[i] + " " + randomNum2;
-            round[i][CORRECT_ANSWER] = String.valueOf(calculationOf(randomNum1, randomNum2, operator));
+            round[i][Engine.QUESTION] = randomNum1 + " " + stringOperator[i] + " " + randomNum2;
+            round[i][Engine.CORRECT_ANSWER] = String.valueOf(calculationOf(randomNum1, randomNum2, operator));
         }
         Engine.gameEngine(TEXT, round);
     }
