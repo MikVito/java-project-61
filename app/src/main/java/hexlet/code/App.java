@@ -1,5 +1,6 @@
 package hexlet.code;
 
+import hexlet.code.games.Cli;
 import hexlet.code.games.Prime;
 import hexlet.code.games.Calculator;
 import hexlet.code.games.GCD;
@@ -25,13 +26,13 @@ public class App {
         System.out.println("Your choice: " + gameNumber);
 
         switch (gameNumber) {
+            case "0" -> System.out.println("See you soon");
             case "1" -> Cli.greetings();
             case "2" -> Even.parityCheck();
             case "3" -> Calculator.generateCalculation();
             case "4" -> GCD.calculateDivisor();
             case "5" -> Progression.generateProgressionRound();
             case "6" -> Prime.generatePrimeNum();
-            case "0" -> System.out.println("See you soon");
             default -> System.out.println("Invalid insert, please select game number from 0 to 6");
         }
     }
