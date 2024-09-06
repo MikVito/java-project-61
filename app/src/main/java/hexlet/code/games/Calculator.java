@@ -10,7 +10,7 @@ public class Calculator {
     public static final int BOUND_OF_RANDOM_V_1 = 100;
     public static final int BOUND_OF_RANDOM_V_2 = 50;
 
-    public static void calc() {
+    public static void generateCalculation() {
         int roundCount = Engine.COUNT_OF_ROUNDS;
         String[][] round = new String[roundCount][2];
         for (int i = 0; i < round.length; i++) {
@@ -21,12 +21,12 @@ public class Calculator {
             String operator = stringOperator[i % stringOperator.length];
 
             round[i][Engine.QUESTION] = randomNum1 + " " + stringOperator[i] + " " + randomNum2;
-            round[i][Engine.CORRECT_ANSWER] = String.valueOf(calculationOf(randomNum1, randomNum2, operator));
+            round[i][Engine.CORRECT_ANSWER] = String.valueOf(performCalculator(randomNum1, randomNum2, operator));
         }
         Engine.gameEngine(TEXT, round);
     }
 
-    public static int calculationOf(int num1, int num2, String operator) {
+    public static int performCalculator(int num1, int num2, String operator) {
         switch (operator) {
             case "*":
                 return num1 * num2;

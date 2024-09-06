@@ -16,12 +16,12 @@ public class GCD {
             int randomNumV1 = Generator.getRandomInt(RANDOM_START, BOUND_OF_RANDOM_V_1) + 1;
             int randomNumV2 = Generator.getRandomInt(RANDOM_START, BOUND_OF_RANDOM_V_2) + 1;
             round[i][Engine.QUESTION] = randomNumV1 + " " + randomNumV2;
-            round[i][Engine.CORRECT_ANSWER] = Integer.toString(dsg(randomNumV1, randomNumV2));
+            round[i][Engine.CORRECT_ANSWER] = Integer.toString(findGreatestGSD(randomNumV1, randomNumV2));
         }
         Engine.gameEngine(TEXT, round);
     }
 
-    public static int dsg(int a, int b) {
+    public static int findGreatestGSD(int a, int b) {
         while (b != 0) {
             int temp = b;
             b = a % b;
