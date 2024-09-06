@@ -22,13 +22,13 @@ public class Engine {
             System.out.println("Your answer is: ");
             String userAnswer = scanner.nextLine();
 
-            if (userAnswer.equals(roundOf[CORRECT_ANSWER])) {
-                System.out.println("Correct!");
-            } else {
+            if (!userAnswer.equals(roundOf[CORRECT_ANSWER])) {
                 System.out.println("'" + userAnswer + "'"
                         + " is wrong answer ;(. Correct answer was" + "'" + roundOf[CORRECT_ANSWER] + "'");
                 System.out.println("Let's try again, " + userName + "!");
-                System.exit(0);
+                return;
+            } else {
+                System.out.println("Correct!");
             }
         }
 
