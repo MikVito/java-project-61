@@ -1,6 +1,5 @@
 package hexlet.code;
 
-import hexlet.code.games.Cli;
 import hexlet.code.games.Prime;
 import hexlet.code.games.Calculator;
 import hexlet.code.games.GCD;
